@@ -19,9 +19,9 @@ module ALU (ALU_ctrl, data_1, data_2, ALU_result, zero);
     begin
         case (ALU_ctrl)
             0:  ALU_result <= data_1 & data_2;      // AND
-        	1:  ALU_result <= data_1 | data_2;      // OR
-        	2:  ALU_result <= data_1 + data_2;      // ADD
-        	6:  ALU_result <= data_1 - data_2;      // SUB
+            1:  ALU_result <= data_1 | data_2;      // OR
+            2:  ALU_result <= data_1 + data_2;      // ADD
+            6:  ALU_result <= data_1 - data_2;      // SUB
             7:  begin                               // SLT
                     if (data_1 < data_2)
                         ALU_result <= 1;
@@ -29,7 +29,7 @@ module ALU (ALU_ctrl, data_1, data_2, ALU_result, zero);
                         ALU_result <= 0;
                 end
             8:  ALU_result <= data_2;               // LUI
-        	12: ALU_result <= ~(data_1 | data_2);   // NOR
+            12: ALU_result <= ~(data_1 | data_2);   // NOR
             default: ALU_result <= 0;
         endcase
     end
