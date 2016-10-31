@@ -13,9 +13,9 @@ module MUX (control, data, result, write_data);
     always @(control, data, result)
     begin
         if (control)
-            write_data <= result;
-        else
             write_data <= data;
+        else
+            write_data <= result;
     end
 
 endmodule
